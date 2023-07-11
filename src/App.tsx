@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid, ThemeProvider, CssBaseline } from "@mui/material";
 
-function App() {
+import { Greeting } from "./components/Greeting";
+import { useTheme } from "./utils/Theme";
+import { SocialLinks } from "./components/Social";
+import { FadeIn } from "./components/FadeIn";
+
+const App = () => {
+  const theme = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
 
-export default App;
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="space-around"
+        height={"100vh"}
+        gap={2}
+        direction="column"
+      >
+        <Grid item>
+          <Greeting />
+        </Grid>
+
+        <Grid item m={2}>
+          <FadeIn delay={3000}>
+            <Grid item>
+              <SocialLinks />
+            </Grid>
+          </FadeIn>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+};
+
+export { App };
