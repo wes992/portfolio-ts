@@ -24,7 +24,7 @@ export const getGreeting = (current: string) => {
     case "longGreeting3":
       return "longGreeting";
     default:
-      return "longGreeting";
+      return "greeting";
   }
 };
 

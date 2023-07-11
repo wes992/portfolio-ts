@@ -11,8 +11,6 @@ import {
 
 const Greeting = () => {
   const labels = useCommonLabels();
-  // const [greeting, setGreeting] = useState("longGreeting");
-  // const pauseChars = greeting === "longGreeting" ? [] : [".", "-"];
   const [state, dispatch] = useReducer(greetingReducer, initialGreetingState);
 
   const getNewText = () => {
