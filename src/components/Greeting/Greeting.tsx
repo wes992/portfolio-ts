@@ -1,24 +1,31 @@
-import { getGreeting, useCommonLabels } from "../../utils/config";
-import { Box, Typography } from "@mui/material";
+import { useCommonLabels } from "../../utils/config";
+import { Box, Grid, Typography } from "@mui/material";
 import { TypeWriter } from "../TypeWriter";
 import { FadeIn } from "../FadeIn";
-import { useState } from "react";
+import { useReducer, useState } from "react";
+import {
+  getGreeting,
+  greetingReducer,
+  initialGreetingState,
+} from "../../utils/hooks";
 
 const Greeting = () => {
-  const pauseChars = [".", "-"];
   const labels = useCommonLabels();
-  const [greetingToDisplay, setGreetingToDisplay] = useState("greeting");
+  // const [greeting, setGreeting] = useState("longGreeting");
+  // const pauseChars = greeting === "longGreeting" ? [] : [".", "-"];
+  const [state, dispatch] = useReducer(greetingReducer, initialGreetingState);
 
   const getNewText = () => {
-    setGreetingToDisplay((prev) => getGreeting(prev));
+    const newGreeting = getGreeting(state.greeting);
+    dispatch({ type: newGreeting });
   };
 
   return (
-    <Box sx={{ width: 300 }}>
+    <Box>
       <Typography variant="h4" onClick={getNewText} sx={{ height: 100 }}>
         <TypeWriter
-          text={labels.get(greetingToDisplay) as string}
-          delayChars={pauseChars}
+          text={labels.get(state.greeting) as string}
+          delayChars={state.delayChars}
         />
       </Typography>
       <FadeIn delay={3000}>

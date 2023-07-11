@@ -4,6 +4,7 @@ import { Greeting } from "./components/Greeting";
 import { useTheme } from "./utils/Theme";
 import { SocialLinks } from "./components/Social";
 import { FadeIn } from "./components/FadeIn";
+import { Logo } from "./components/Logo";
 
 const App = () => {
   const theme = useTheme();
@@ -20,8 +21,12 @@ const App = () => {
         gap={2}
         direction="column"
       >
-        <Grid item>
+        <Grid container item justifyContent="start" width={"70%"}>
           <Greeting />
+        </Grid>
+
+        <Grid item>
+          <Logo />
         </Grid>
 
         <Grid item m={2}>

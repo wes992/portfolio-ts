@@ -3,13 +3,24 @@ export enum Labels {
   SKILLS = "skills",
   SOCIAL = "social",
 }
+// `My name is Wes Hampton. I am a web developer based in Washington D.C. I have developed several web applications from Banking Applications to Disaster Planning and Recovery applications.
 
-const labels = new Map([
+// I am passionate about cutting-edge, performant and beautiful UI to create an optimal UX.`;
+
+export const labels = new Map([
   [
     Labels.COMMON,
     new Map([
-      ["greeting", "Hey. I'm Wes - a web developer."],
+      ["greeting", "Hey, I'm Wes - a web developer based in Washington D.C."],
       ["secondGreeting", "I love what I do. Let me show you."],
+      [
+        "longGreeting2",
+        "I have developed several web applications from Banking apps to Disaster Planning and Recovery apps.",
+      ],
+      [
+        "longGreeting3",
+        "I am passionate about cutting-edge, performant and beautiful UI to create an optimal UX.",
+      ],
       ["tagline", "React | Node | Everything in between"],
       ["header", "This is just a test header"],
       ["body", "This is just a test body"],
@@ -24,11 +35,6 @@ const labels = new Map([
   ],
   [Labels.SOCIAL, new Map([["header", "Social Links:"]])],
 ]);
-
-const greetings: string[] = ["greeting", "secondGreeting"];
-export const getGreeting = (current: string) => {
-  return greetings.find((greeting) => greeting !== current) || "greeting";
-};
 
 export const useLabels = (key: Labels) => labels.get(key);
 export const useCommonLabels = () => labels.get(Labels.COMMON)!;
