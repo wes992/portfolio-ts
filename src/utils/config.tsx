@@ -25,6 +25,11 @@ const labels = new Map([
   [Labels.SOCIAL, new Map([["header", "Social Links:"]])],
 ]);
 
+const greetings: string[] = ["greeting", "secondGreeting"];
+export const getGreeting = (current: string) => {
+  return greetings.find((greeting) => greeting !== current) || "greeting";
+};
+
 export const useLabels = (key: Labels) => labels.get(key);
 export const useCommonLabels = () => labels.get(Labels.COMMON)!;
 

@@ -1,4 +1,4 @@
-import { useCommonLabels } from "../../utils/config";
+import { getGreeting, useCommonLabels } from "../../utils/config";
 import { Box, Typography } from "@mui/material";
 import { TypeWriter } from "../TypeWriter";
 import { FadeIn } from "../FadeIn";
@@ -10,10 +10,7 @@ const Greeting = () => {
   const [greetingToDisplay, setGreetingToDisplay] = useState("greeting");
 
   const getNewText = () => {
-    const greetings: string[] = ["greeting", "secondGreeting"];
-    setGreetingToDisplay(
-      (prev) => greetings.find((greeting) => greeting !== prev)!
-    );
+    setGreetingToDisplay((prev) => getGreeting(prev));
   };
 
   return (
