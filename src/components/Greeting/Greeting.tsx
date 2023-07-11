@@ -1,8 +1,8 @@
 import { useCommonLabels } from "../../utils/config";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { TypeWriter } from "../TypeWriter";
 import { FadeIn } from "../FadeIn";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import {
   getGreeting,
   greetingReducer,

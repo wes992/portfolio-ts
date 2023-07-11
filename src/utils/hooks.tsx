@@ -1,6 +1,3 @@
-import { useReducer } from "react";
-import { labels, Labels } from "./config";
-
 interface GreetingState {
   greeting: string;
   delayChars: string[];
@@ -22,7 +19,7 @@ export const getGreeting = (current: string) => {
     case "longGreeting2":
       return "longGreeting3";
     case "longGreeting3":
-      return "longGreeting";
+      return "greeting";
     default:
       return "greeting";
   }

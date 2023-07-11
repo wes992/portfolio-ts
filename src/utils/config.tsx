@@ -3,9 +3,6 @@ export enum Labels {
   SKILLS = "skills",
   SOCIAL = "social",
 }
-// `My name is Wes Hampton. I am a web developer based in Washington D.C. I have developed several web applications from Banking Applications to Disaster Planning and Recovery applications.
-
-// I am passionate about cutting-edge, performant and beautiful UI to create an optimal UX.`;
 
 export const labels = new Map([
   [
