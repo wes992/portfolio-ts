@@ -20,13 +20,19 @@ const Greeting = () => {
 
   return (
     <Box>
-      <Typography variant="h4" onClick={getNewText} sx={{ height: 100 }}>
-        <TypeWriter
-          text={labels.get(state.greeting) as string}
-          delayChars={state.delayChars}
-        />
-      </Typography>
-      <FadeIn delay={3000}>
+      <Box sx={{ height: 100 }}>
+        <Typography
+          variant="h4"
+          onClick={getNewText}
+          sx={{ borderLeft: "2px solid green", pl: 2, mb: 2 }}
+        >
+          <TypeWriter
+            text={labels.get(state.greeting) as string}
+            delayChars={state.delayChars}
+          />
+        </Typography>
+      </Box>
+      <FadeIn delay={4000}>
         <Typography variant="body1">{labels.get("tagline")}</Typography>
       </FadeIn>
     </Box>

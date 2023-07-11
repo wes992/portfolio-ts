@@ -30,7 +30,7 @@ const App = () => {
         </Grid>
 
         <Grid item m={2}>
-          <FadeIn delay={3000}>
+          <FadeIn delay={4000}>
             <Grid item>
               <SocialLinks />
             </Grid>

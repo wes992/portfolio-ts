@@ -6,13 +6,13 @@
   stroke: #0cdbff;
   stroke-dasharray: 419px;
   stroke-dashoffset: 419px;
-  animation: stroke 5s ease forwards 3s;
+  animation: stroke 5s ease forwards 4s;
 }
 
 #animatedLogo {
   width: 50%;
   transform: rotateZ(-30deg);
-  animation: fill 1s ease both 4s 1;
+  animation: fill 1s ease both 5s 1;
 }
 
 @keyframes stroke {
