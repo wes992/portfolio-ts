@@ -44,3 +44,17 @@ export const greetingReducer = (
       };
   }
 };
+
+export const useScrollVar = () => {
+  const setScrollVar = () => {
+    const htmlElement = document.documentElement;
+    const percentOfScreenHeightScrolled =
+      htmlElement.scrollTop / htmlElement.clientHeight;
+    const percent = percentOfScreenHeightScrolled * 100;
+    htmlElement.style.setProperty("--scroll", `${Math.min(percent, 100)}`);
+  };
+  setScrollVar();
+
+  window.addEventListener("scroll", setScrollVar);
+  window.addEventListener("resize", setScrollVar);
+};

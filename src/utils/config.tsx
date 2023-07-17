@@ -16,7 +16,7 @@ export const labels = new Map([
       ],
       [
         "longGreeting3",
-        "I am passionate about creating cutting-edge, performant and beautiful UI's that optimize user experience.",
+        "I am passionate about creating performant and beautiful UI's that optimize user experience.",
       ],
       ["tagline", "React | Node | Everything in between"],
       ["header", "This is just a test header"],
